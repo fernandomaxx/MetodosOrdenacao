@@ -7,7 +7,7 @@ void print(int ar[], int size)
 	for (int j = 0; j < size; ++j) {
 		printf("%d\t ", ar[j]);
 	}
-	std::cout << "Ordenado com sucesso...\n";
+	std::cout << "\nOrdenado com sucesso...\n";
 }
 
 int main(int argc, char const *argv[])
