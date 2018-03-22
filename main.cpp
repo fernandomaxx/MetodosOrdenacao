@@ -1,8 +1,5 @@
 #include <iostream>
-#include "insertionSort.h"
-#include "selectionSort.h"
-#include "simpleQuickSort.h"
-#include "mergeSort.h"
+#include "sortingMethods.h"
 
 void print(int ar[], int size)
 {
@@ -15,7 +12,7 @@ void print(int ar[], int size)
 int main(int argc, char const *argv[])
 {
 	int N;
-	std::cout << "1: insertionSort\t 2: selectionSort \n3: mergeSort\t\t 4: quickSort \n";
+	std::cout << "1: insertionSort\t 2: selectionSort \n3: mergeSort\t\t 4: quickSort \n5: heapSort\n";
 	std::cin >> N;
 	std::cout <<  std::endl;
 	freopen("num.1000.1.in", "r", stdin);
@@ -28,24 +25,38 @@ int main(int argc, char const *argv[])
 		std::cin >> ar[i];
 	}
 
-	if (N == 1) {
-		insertionSort(ar, size);
-		print(ar, size);
+
+	switch (N) {
+
+		case 1:
+			insertionSort(ar, size);
+			print(ar, size);
+			break;
+
+		case 2:
+			selectionSort(ar, size);
+			print(ar, size);
+			break;
+
+		case 3:
+			selectionSort(ar, size);
+			print(ar, size);
+			break;
+
+		case 4:
+			selectionSort(ar, size);
+			print(ar, size);
+			break;
+
+		case 5:
+			heapSort(ar, size);
+			print(ar, size);
+			break;
+
+		default:
+			std::cout << "opcao invalida";
+
 	}
-	else if (N == 2) {
-		selectionSort(ar, size);
-		print(ar, size);
-	}
-	else if (N == 3) {
-		selectionSort(ar, size);
-		print(ar, size);
-	}
-	else if (N == 4) {
-		selectionSort(ar, size);
-		print(ar, size);
-	}
-	else
-		std::cout << "opcao invalida";
 
 	std::cout << std::endl;
 }
